@@ -13,21 +13,17 @@ endmacro()
 
 # ------------------------------------------------------------------------------------------------
 
-set(SHSDK_COMPILE_FLAGS )
-
 if (MSVC)
 	set(SHSDK_COMPILE_FLAGS "/EHs-c- /GR-") # disable exceptions / disable RTTI
 else (MSVC)
 	set(SHSDK_COMPILE_FLAGS "-fno-exceptions -fno-rtti")
 endif (MSVC)
 
-set(SHSDK_COMPILE_DEFINITIONS )
+set(SHSDK_COMPILE_DEFINITIONS "SH_$<UPPER_CASE:$<CONFIG>>=1")
 
 if (MSVC)
 	list(APPEND SHSDK_COMPILE_DEFINITIONS "_ITERATOR_DEBUG_LEVEL=0")
 endif (MSVC)
-
-list(APPEND SHSDK_COMPILE_DEFINITIONS "SH_$<UPPER_CASE:$<CONFIG>>=1")
 
 # ------------------------------------------------------------------------------------------------
 
