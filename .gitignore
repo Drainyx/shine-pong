@@ -30,8 +30,8 @@
 
 # Shine
 _logs/
-Cooking/tmp/
-Cooking/Generic/Resources/SpritesTemp/*
+Cooking/
+Generic/Resources/SpritesTemp/*
 build/
 *.bat
 *.user
