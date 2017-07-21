@@ -1,0 +1,35 @@
+<prefab engine_save_ver="1.3.2">
+    <preload>
+        <texture_list/>
+        <animated_texture_list/>
+        <sprite_texture_list>
+            <sprite_texture name="pong.obstacle.tga"/>
+        </sprite_texture_list>
+        <material_library_list/>
+        <submesh_list/>
+        <mesh_list/>
+        <prefab_list/>
+    </preload>
+    <layer_list>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="80.000000" max_y="80.000000"/>
+        <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
+    </layer_list>
+    <object_list>
+        <entity2 name="obstacle" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="0.152941" color_g="0.705882" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="pong" sprite_name="obstacle" blend_function="alpha"/>
+        <collision_shape name="collision_shape_auto_001" position_x="-0.100000" position_y="0.349999" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" type="none" prohibited="0" closed="1">
+            <collision_shape_point name="collision_shape_auto_001.0" position_x="-39.900002" position_y="36.450008" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="0" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.1" position_x="-39.900002" position_y="-36.349998" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="1" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.2" position_x="-36.099998" position_y="-40.150002" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.3" position_x="36.299995" position_y="-40.150002" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="3" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.4" position_x="40.099998" position_y="-35.950001" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="4" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.5" position_x="40.099998" position_y="36.850006" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="5" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.6" position_x="36.299995" position_y="39.650002" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="6" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.7" position_x="-36.900002" position_y="39.650002" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="7" parent_point="collision_shape_auto_001"/>
+        </collision_shape>
+    </object_list>
+    <data_set_list>
+        <data_set name="pong_obstacle" instance_name="pong_obstacle_0">
+            <data type="float" name="acceleration_ball" value="5.000000"/>
+        </data_set>
+    </data_set_list>
+</prefab>

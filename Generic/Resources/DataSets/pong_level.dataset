@@ -1,0 +1,3 @@
+<data_set	plugin="PluginPong">
+	<data name="blocks_in_game"		type="int" 		editable="true" 	default_value="10"/>
+</data_set>

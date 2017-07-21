@@ -1,6 +1,3 @@
-# Prerequisites
-*.d
-
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +27,11 @@
 *.exe
 *.out
 *.app
+
+# Shine
+_logs/
+Cooking/tmp/
+Cooking/Generic/Resources/SpritesTemp/*
+build/
+*.bat
+*.user

@@ -1,0 +1,71 @@
+<gui>
+	<sss>
+		<style target="button"									font="manga_temple_90.abc" text_color="#DDE18022" text_align="center_center" />
+		<style target="button"									pseudo_state="pressed" color="#FFFFFFFF" text_color="#FF720606"/>
+		<style target="text"									font="sst_medium_55.abc" color="#FFFFFFFF" text_color="#BBFFFFFF"/>
+
+
+		<style identifier="panel_buttons_menu" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="button_menu_play" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="25" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FFFFFFFF"/>
+		<style identifier="button_menu_level" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="37" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FFAAAAAA"/>
+		<style identifier="button_menu_controls" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="50" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FFAAAAAA"/>
+		<style identifier="button_menu_settings" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="63" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+		<style identifier="button_menu_exit" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="75" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+
+
+		<style identifier="panel_buttons_end" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="button_end_menu" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+
+
+		<style identifier="panel_buttons_level" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="button_level_back" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+
+
+		<style identifier="panel_buttons_controls" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="button_controls_back" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+
+		<style identifier="text_controls" 								h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="10"		position_y="0" 	width="80"	height="100" text_wrap="true"/>
+
+		<style identifier="panel_buttons_settings" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="button_settings_back" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
+
+	</sss>                                         
+	<root>		
+		<panel id="panel_buttons_menu">
+			<button id="button_menu_play" 		text="Play" />
+			<button id="button_menu_level" 		text="Level" />
+			<button id="button_menu_controls" 	text="Controls"/>
+			<button id="button_menu_settings" 	text="Settings"/>
+			<button id="button_menu_exit"		text="Exit"/>
+		</panel>
+		
+		<panel id="panel_buttons_end">
+			<button id="button_end_menu"		text="Menu"/>
+			<text 	id="text_end" 				text="Game Over !"/>
+		</panel>
+
+		<panel id="panel_buttons_level">
+			<button id="button_level_back" 		text="Back"/>
+		</panel>
+
+		<panel id="panel_buttons_controls">
+			<button id="button_controls_back"	text="Back"/>
+			<text 	id="text_controls"	text_type="raw" text="The left player controls his racquet with the keys Z and S on the keyboard.
+				The boost is on the key A.
+
+				The right player controls his racquet with the arrows Up and Down on the keyboard.
+				The boost is on the arrow Right.
+
+				To throw the ball, press the key Space on the keyboard."/>
+		</panel>
+
+		<panel id="panel_buttons_settings">
+			<button id="button_settings_back" 	text="Back"/>
+		</panel>
+	</root>
+</gui>                        <!-- -->

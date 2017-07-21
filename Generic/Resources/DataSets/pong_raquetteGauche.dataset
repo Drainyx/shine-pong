@@ -1,0 +1,5 @@
+<data_set	plugin="PluginPong">
+	<data name="velocity_racquet"	type="float"  	editable="true" 	default_value="1000.0"/>
+
+	<data name="acceleration_ball"	type="float" 	editable="true" 	default_value="30.0"/>
+</data_set>

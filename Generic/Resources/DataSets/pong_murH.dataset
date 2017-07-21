@@ -1,0 +1,3 @@
+<data_set	plugin="PluginPong">
+	<data name="acceleration_ball"	type="float" 	editable="true" 	default_value="5.0"/>
+</data_set>

@@ -1,0 +1,9 @@
+<extension name="Pong" identifier="ExtPong">
+
+	<dependencies>
+	</dependencies>
+
+	<description>
+	</description>
+
+</extension>

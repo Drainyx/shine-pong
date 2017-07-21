@@ -1,0 +1,93 @@
+<configuration>
+
+	<event name="up1">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="z"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>	
+	</event>
+	
+	<event name="up2">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="up"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+	
+	<event name="down1">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="s"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>	
+	</event>
+	
+	<event name="down2">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="down"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="boost1">
+		<keyboard>
+			<input name="just_pressed">
+				<parameter name="control" value="a"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="boost2">
+		<keyboard>
+			<input name="just_pressed">
+				<parameter name="control" value="right"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="unboost1">
+		<keyboard>
+			<input name="just_released">
+				<parameter name="control" value="a"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="unboost2">
+		<keyboard>
+			<input name="just_released">
+				<parameter name="control" value="right"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="play">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="space"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+	<event name="quit">
+		<keyboard>
+			<input name="pressed">
+				<parameter name="control" value="escape"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	</event>
+
+</configuration>
