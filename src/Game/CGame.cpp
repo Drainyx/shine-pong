@@ -1,6 +1,11 @@
 #include "Game.h"
 
-static const CShIdentifier levelIdentifier("pong_simple_obstacles");
+static const CShIdentifier levelSimpleIdentifier("pong_simple");
+static const CShIdentifier levelSimpleObstaclesIdentifier("pong_simple_obstacles");
+//static const CShIdentifier levelMurIdentifier("pong_mur");
+//static const CShIdentifier levelMurObstaclesIdentifier("pong_mur_obstacles");
+//static const CShIdentifier levelUIdentifier("pong_u");
+//static const CShIdentifier levelUObstaclesIdentifier("pong_u_obstacles");
 
 CGame::CGame()
 {
@@ -12,39 +17,11 @@ CGame::~CGame()
 
 }
 
-void CGame::OnWin(int gagnant)
+void CGame::LaunchLevel()
 {
-	if (gagnant == 1) // Droite
-	{
-		m_iPointsDroit++;
-		ShTextZone::SetText(m_pPtsDroit, CShString::FromInt(m_iPointsDroit));
-		if (m_iPointsDroit == m_iMaxPoints)
-		{
-			m_eGameState = e_game_state_end;
-		}
-		else
-		{
-			m_eGameState = e_game_state_waiting;
-		}
-	}
-	else if (gagnant == 2) // Gauche
-	{
-		m_iPointsGauche++;
-		ShTextZone::SetText(m_pPtsGauche, CShString::FromInt(m_iPointsGauche));
-		if (m_iPointsGauche == m_iMaxPoints)
-		{
-			m_eGameState = e_game_state_end;
-		}
-		else
-		{
-			m_eGameState = e_game_state_waiting;
-		}
-	}
-}
+	CShIdentifier levelIdentifier = m_GameLevel;
 
-void CGame::Initialize()
-{
-	ShLevel::Load(levelIdentifier); 
+	ShLevel::Load(levelIdentifier);
 
 	m_pbackground1 = ShEntity2::Find(levelIdentifier, CShIdentifier("background1"));
 	SH_ASSERT(shNULL != m_pbackground1);
@@ -53,21 +30,11 @@ void CGame::Initialize()
 	SH_ASSERT(shNULL != m_pbackground2);
 	ShObject::SetShow(m_pbackground2, true, true);
 
-	m_pUser = ShUser::GetUser(0);
-	SH_ASSERT(shNULL != m_pUser);
-
-	m_bRestart = false;
-
-	m_iMaxPoints = 3;
-
-	m_eGameState = e_game_state_menu;
-	m_eMenuState = e_menu_state_accueil;
-
 	m_pInfosGauche = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(-1400.0f, -850.0f, 0.0f), CShEulerAngles_ZERO, CShVector3(1.0f, 1.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(255.0f, 255.0f, 255.0f, 0.7f), true);
 	m_pInfosDroite = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(1300.0f, -850.0f, 0.0f), CShEulerAngles_ZERO, CShVector3(1.0f, 1.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(255.0f, 255.0f, 255.0f, 0.7f), true);
 	ShTextZone::SetText(m_pInfosGauche, CShString("Z/S"));
 	ShTextZone::SetText(m_pInfosDroite, CShString("Up/Down"));
-	
+
 	m_pPtsDroit = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(1100.0f, -400.0f, -0.001f), CShEulerAngles_ZERO, CShVector3(2.0f, 2.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(0.0f, 0.0f, 0.0f, 0.2f), true);
 	m_pPtsGauche = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(-1100.0f, -400.0f, -0.001f), CShEulerAngles_ZERO, CShVector3(2.0f, 2.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(0.0f, 0.0f, 0.0f, 0.2f), true);
 
@@ -78,6 +45,21 @@ void CGame::Initialize()
 	m_pScoreGauche = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(-300.0f, 400.0f, 10.1f), CShEulerAngles_ZERO, CShVector3(2.0f, 2.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(255.0f, 255.0f, 255.0f, 0.7f), true);
 	m_pScoreDroite = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(300.0f, 400.0f, 10.1f), CShEulerAngles_ZERO, CShVector3(2.0f, 2.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(255.0f, 255.0f, 255.0f, 0.7f), true);
 	m_pScoreUnion = ShTextZone::Create(levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShAABB2(-1.0f, 1.0f, -1.0f, 1.0f), CShVector3(0.0f, 400.0f, 10.1f), CShEulerAngles_ZERO, CShVector3(2.0f, 2.0f, 1.0f), ShTextZone::e_align_center_center, false, CShIdentifier("sst_medium_55.abc"), CShRGBAf(255.0f, 255.0f, 255.0f, 0.7f), true);
+
+}
+
+void CGame::Initialize()
+{
+	m_pUser = ShUser::GetUser(0);
+	SH_ASSERT(shNULL != m_pUser);
+
+	m_bRestart = false;
+
+	m_iMaxPoint = 3;
+
+	m_GameLevel = levelSimpleIdentifier;
+	m_eGameState = e_game_state_menu;
+	m_eMenuState = e_menu_state_accueil;
 	
 	//
 	// GUI
@@ -85,7 +67,7 @@ void CGame::Initialize()
 
 	//
 	// Gets GUI Elements
-	m_pPanelMenu = (ShGUIControlPanel*)	ShGUIControl::GetElementById(CShIdentifier("panel_buttons_menu"), pControlRoot);
+	m_pPanelMenu = (ShGUIControlPanel*)	ShGUIControl::GetElementById(CShIdentifier("panel_menu"), pControlRoot);
 	SH_ASSERT(shNULL != m_pPanelMenu);
 
 	ShGUIControlButton * pButtonJouer = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_menu_play"), m_pPanelMenu);
@@ -99,27 +81,45 @@ void CGame::Initialize()
 	ShGUIControlButton * pButtonQuitter = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_menu_exit"), m_pPanelMenu);
 	SH_ASSERT(shNULL != pButtonQuitter);
 
-	m_pPanelFin = (ShGUIControlPanel*) ShGUIControl::GetElementById(CShIdentifier("panel_buttons_end"), pControlRoot);
+	m_pPanelFin = (ShGUIControlPanel*) ShGUIControl::GetElementById(CShIdentifier("panel_end"), pControlRoot);
 	SH_ASSERT(shNULL != m_pPanelFin);
 	ShGUIControlButton * pButtonMenu = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_end_menu"), m_pPanelFin);
 	SH_ASSERT(shNULL != pButtonMenu);
+	ShGUIControlText * pTextFin = (ShGUIControlText*)ShGUIControl::GetElementById(CShIdentifier("text_end"), m_pPanelFin);
+	SH_ASSERT(shNULL != pTextFin);
 
-	m_pPanelNiveau = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_buttons_level"), pControlRoot);
+	m_pPanelNiveau = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_level"), pControlRoot);
 	SH_ASSERT(shNULL != m_pPanelNiveau);
 	ShGUIControlButton * pButtonNiveauRetour = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_level_back"), m_pPanelNiveau);
 	SH_ASSERT(shNULL != pButtonNiveauRetour);
-	
-	m_pPanelCommandes = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_buttons_controls"), pControlRoot);
+	ShGUIControlRadioButton * pRadioButtonNiveauSimple = (ShGUIControlRadioButton*)ShGUIControl::GetElementById(CShIdentifier("radiobutton_level_simple"), m_pPanelNiveau);
+	SH_ASSERT(shNULL != pRadioButtonNiveauSimple);
+	ShGUIControlRadioButton * pRadioButtonNiveauMur = (ShGUIControlRadioButton*)ShGUIControl::GetElementById(CShIdentifier("radiobutton_level_mur"), m_pPanelNiveau);
+	SH_ASSERT(shNULL != pRadioButtonNiveauMur);
+	ShGUIControlRadioButton * pRadioButtonNiveauU = (ShGUIControlRadioButton*)ShGUIControl::GetElementById(CShIdentifier("radiobutton_level_u"), m_pPanelNiveau);
+	SH_ASSERT(shNULL != pRadioButtonNiveauU);
+	ShGUIControlCheckBox * pCheckBoxNiveauObstacles = (ShGUIControlCheckBox *)ShGUIControl::GetElementById(CShIdentifier("checkbox_level_obstacles"), m_pPanelNiveau);
+	SH_ASSERT(shNULL != pCheckBoxNiveauObstacles);
+
+	m_pPanelCommandes = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_controls"), pControlRoot);
 	SH_ASSERT(shNULL != m_pPanelCommandes);
 	ShGUIControlButton * pButtonCommandesRetour = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_controls_back"), m_pPanelCommandes);
 	SH_ASSERT(shNULL != pButtonCommandesRetour);
 	ShGUIControlText * 	pTextCommandes = (ShGUIControlText*)ShGUIControl::GetElementById(CShIdentifier("text_controls"), m_pPanelCommandes);
-	SH_ASSERT(shNULL != pButtonCommandes);
+	SH_ASSERT(shNULL != pTextCommandes);
 
-	m_pPanelOptions = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_buttons_settings"), pControlRoot);
+	m_pPanelOptions = (ShGUIControlPanel*)ShGUIControl::GetElementById(CShIdentifier("panel_settings"), pControlRoot);
 	SH_ASSERT(shNULL != m_pPanelOptions);
 	ShGUIControlButton * pButtonOptionsRetour = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_settings_back"), m_pPanelOptions);
 	SH_ASSERT(shNULL != pButtonOptionsRetour);
+	ShGUIControlButton * pButtonOptionsGauche = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_settings_left"), m_pPanelOptions);
+	SH_ASSERT(shNULL != pButtonOptionsGauche);
+	ShGUIControlButton * pButtonOptionsDroite = (ShGUIControlButton*)ShGUIControl::GetElementById(CShIdentifier("button_settings_right"), m_pPanelOptions);
+	SH_ASSERT(shNULL != pButtonOptionsDroite);
+	ShGUIControlText * pTextInfosOptions = (ShGUIControlText*)ShGUIControl::GetElementById(CShIdentifier("text_settings_information_points"), m_pPanelOptions);
+	SH_ASSERT(shNULL != pTextInfosOptions);
+	ShGUIControlText * pTextOptions = (ShGUIControlText*)ShGUIControl::GetElementById(CShIdentifier("text_settings_points"), m_pPanelOptions);
+	SH_ASSERT(shNULL != pTextOptions);
 
 	//
 	// Adds Slots Fct Ptr
@@ -132,6 +132,8 @@ void CGame::Initialize()
 	ShGUIControlButton::AddSlotFctPtrClick(pButtonNiveauRetour, (pSlotSDKButtonClick)ButtonRetourClick);
 	ShGUIControlButton::AddSlotFctPtrClick(pButtonCommandesRetour, (pSlotSDKButtonClick)ButtonRetourClick);
 	ShGUIControlButton::AddSlotFctPtrClick(pButtonOptionsRetour, (pSlotSDKButtonClick)ButtonRetourClick);
+	ShGUIControlButton::AddSlotFctPtrClick(pButtonOptionsGauche, (pSlotSDKButtonClick)ButtonOptionsGaucheClick);
+	ShGUIControlButton::AddSlotFctPtrClick(pButtonOptionsDroite, (pSlotSDKButtonClick)ButtonOptionsDroiteClick);
 
 	ShGUIControl::Show(m_pPanelMenu);
 	ShGUIControl::Hide(m_pPanelFin);
@@ -146,7 +148,7 @@ void CGame::Initialize()
 	//int i = 0;
 	//CShWString::FromInt(i);
 
-
+//	ShGUIControlRadioButton::AddSlotFctPtrSelected();
 }
 
 void CGame::Update(float dt)
@@ -187,6 +189,36 @@ void CGame::Update(float dt)
 	}
 }
 
+void CGame::OnWin(int gagnant)
+{
+	if (gagnant == 1) // Droite
+	{
+		m_iPointsDroit++;
+		ShTextZone::SetText(m_pPtsDroit, CShString::FromInt(m_iPointsDroit));
+		if (m_iPointsDroit == m_iMaxPoint)
+		{
+			m_eGameState = e_game_state_end;
+		}
+		else
+		{
+			m_eGameState = e_game_state_waiting;
+		}
+	}
+	else if (gagnant == 2) // Gauche
+	{
+		m_iPointsGauche++;
+		ShTextZone::SetText(m_pPtsGauche, CShString::FromInt(m_iPointsGauche));
+		if (m_iPointsGauche == m_iMaxPoint)
+		{
+			m_eGameState = e_game_state_end;
+		}
+		else
+		{
+			m_eGameState = e_game_state_waiting;
+		}
+	}
+}
+
 void CGame::Release()
 {
 	ShLevel::Release();
@@ -195,6 +227,7 @@ void CGame::Release()
 
 bool CGame::ButtonJouerClick(ShGUIControlButton * pButton)
 {
+	g_game.LaunchLevel();
 	g_game.SetGameState(CGame::e_game_state_waiting);
 	return true;
 }
@@ -214,6 +247,22 @@ bool CGame::ButtonCommandesClick(ShGUIControlButton * pButton)
 bool CGame::ButtonOptionsClick(ShGUIControlButton * pButton)
 {
 	g_game.SetMenuState(CGame::e_menu_state_options);
+	return true;
+}
+
+bool CGame::ButtonOptionsGaucheClick(ShGUIControlButton * pButton)
+{
+	ShApplication::RequestQuit();
+	return true;
+}
+
+bool CGame::ButtonOptionsDroiteClick(ShGUIControlButton * pButton)
+{
+	ShApplication::RequestQuit();
+	
+	g_game.SetMaxPoint(g_game.GetMaxPoint() + 1);
+	//ShGUIControltext::SetText(g_game.GetSettingsMaxScoreText());
+
 	return true;
 }
 
@@ -300,3 +349,18 @@ void CGame::SetMenuState(EMenuState eMenuState)
 		break;
 	}
 }
+
+void CGame::SetMaxPoint(int iMaxPoint)
+{
+	m_iMaxPoint = iMaxPoint;
+}
+
+int CGame::GetMaxPoint()
+{
+	return m_iMaxPoint;
+}
+/*
+ShGUIControlText * CGame::GetSettingsMaxScoreText()
+{
+	return (shNULL);
+}*/

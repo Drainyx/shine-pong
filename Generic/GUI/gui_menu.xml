@@ -2,10 +2,14 @@
 	<sss>
 		<style target="button"									font="manga_temple_90.abc" text_color="#DDE18022" text_align="center_center" />
 		<style target="button"									pseudo_state="pressed" color="#FFFFFFFF" text_color="#FF720606"/>
+
 		<style target="text"									font="sst_medium_55.abc" color="#FFFFFFFF" text_color="#BBFFFFFF"/>
+ 
+		<style target="radiobutton"								color="#BBBBBBBB"/>
+		<style target="radiobutton"								pseudo_state="selected" color="#FFFFFFFF"/>		
 
 
-		<style identifier="panel_buttons_menu" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+		<style identifier="panel_menu" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
 
 		<style identifier="button_menu_play" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="25" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FFFFFFFF"/>
 		<style identifier="button_menu_level" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="37" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FFAAAAAA"/>
@@ -14,29 +18,52 @@
 		<style identifier="button_menu_exit" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="37.5"		position_y="75" 	width="25"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
 
 
-		<style identifier="panel_buttons_end" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+		<style identifier="panel_end" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
 
 		<style identifier="button_end_menu" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
 
+		<style identifier="text_end" 									h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 	width="100"	height="100" text_wrap="true" text_align="center_center"/>
 
-		<style identifier="panel_buttons_level" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="panel_level" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
 
 		<style identifier="button_level_back" 							h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
 
+		<style identifier="checkbox_level_obstacles" 					h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="pixel"  height_unit="pixel" 	position_x="27"		position_y="27" 	width="40"	height="40" sprite_library="pong" background_image="invalider"/>
 
-		<style identifier="panel_buttons_controls" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+		<style identifier="checkbox_level_obstacles" 		pseudo_state="checked" sprite_library="pong" background_image="valider"/>
+		
+		<style identifier="text_checkbox_level_obstacles"				h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="10"		position_y="0" 	width="25"	height="60" text_align="center_left"/>
+
+		<style identifier="radiobutton_level_simple" 					h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="10"		position_y="50" 	width="20"	height="15" sprite_library="pong" background_image="simple_obstacles"/>
+
+		<style identifier="radiobutton_level_mur" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="50" 	width="20"	height="15" sprite_library="pong" background_image="simple_obstacles"/>
+
+		<style identifier="radiobutton_level_u" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="70"		position_y="50" 	width="20"	height="15" sprite_library="pong" background_image="simple_obstacles"/>
+
+
+		<style identifier="panel_controls" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
 
 		<style identifier="button_controls_back" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
 
-		<style identifier="text_controls" 								h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="10"		position_y="0" 	width="80"	height="100" text_wrap="true"/>
+		<style identifier="text_controls" 								h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="10"		position_y="0" 	width="90"	height="100" text_wrap="true"/>
 
-		<style identifier="panel_buttons_settings" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
+
+		<style identifier="panel_settings" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"		position_y="0" 		width="100"	height="100" />
 
 		<style identifier="button_settings_back" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="75" 	width="20"	height="8" sprite_library="pong" background_image="bouton" color="#FF888888"/>
 
+		<style identifier="button_settings_left" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="40"		position_y="50" 	width="5"	height="4" sprite_library="pong" background_image="flecheg" color="#AAAAAAAA"/>
+
+		<style identifier="button_settings_right" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="55"		position_y="50" 	width="5"	height="4" sprite_library="pong" background_image="fleched" color="#AAAAAAAA"/>
+
+		<style identifier="text_settings_information_points" 			h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="0"	position_y="0"  		width="100"	height="84" text_wrap="true" text_align="center_center"/>
+
+		<style identifier="text_settings_points" 						h_pivot="left" v_pivot="top" position_x_unit="percent" position_y_unit="percent" 	width_unit="percent"  height_unit="percent" 	position_x="50"		position_y="10" 	width="100"	height="100"/>
+
 	</sss>                                         
 	<root>		
-		<panel id="panel_buttons_menu">
+		<panel id="panel_menu">
 			<button id="button_menu_play" 		text="Play" />
 			<button id="button_menu_level" 		text="Level" />
 			<button id="button_menu_controls" 	text="Controls"/>
@@ -44,16 +71,21 @@
 			<button id="button_menu_exit"		text="Exit"/>
 		</panel>
 		
-		<panel id="panel_buttons_end">
+		<panel id="panel_end">
 			<button id="button_end_menu"		text="Menu"/>
 			<text 	id="text_end" 				text="Game Over !"/>
 		</panel>
 
-		<panel id="panel_buttons_level">
+		<panel id="panel_level">
 			<button id="button_level_back" 		text="Back"/>
+			<checkbox id="checkbox_level_obstacles"/>
+			<text id="text_checkbox_level_obstacles" text="Level with bricks:"/>
+			<radiobutton id="radiobutton_level_simple"/>
+			<radiobutton id="radiobutton_level_mur"/>
+			<radiobutton id="radiobutton_level_u"/>
 		</panel>
 
-		<panel id="panel_buttons_controls">
+		<panel id="panel_controls">
 			<button id="button_controls_back"	text="Back"/>
 			<text 	id="text_controls"	text_type="raw" text="The left player controls his racquet with the keys Z and S on the keyboard.
 				The boost is on the key A.
@@ -64,8 +96,12 @@
 				To throw the ball, press the key Space on the keyboard."/>
 		</panel>
 
-		<panel id="panel_buttons_settings">
+		<panel id="panel_settings">
 			<button id="button_settings_back" 	text="Back"/>
+			<button id="button_settings_left"/>
+			<button id="button_settings_right"/>
+			<text 	id="text_settings_information_points" text="Points required to win"/>
+			<text 	id="text_settings_points"/>
 		</panel>
 	</root>
 </gui>                        <!-- -->

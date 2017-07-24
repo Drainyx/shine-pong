@@ -30,11 +30,18 @@ public:
 	void Initialize();
 	void Update(float dt);
 	void Release();
+	void LaunchLevel(void);
 
 	virtual void OnWin(int gagnant);
 	
 	void SetGameState(EGameState eGameState);
 	void SetMenuState(EMenuState eMenuState);
+
+public:
+	//
+	// Getters/Setters
+	void		SetMaxPoint	(int iMaxPoint);
+	int			GetMaxPoint	(void);
 
 public:
 	bool m_bRestart;
@@ -46,8 +53,11 @@ public:
 	static bool ButtonQuitterClick(ShGUIControlButton * pButton);
 	static bool ButtonMenuClick(ShGUIControlButton * pButton);
 	static bool ButtonRetourClick(ShGUIControlButton * pButton);
+	static bool ButtonOptionsGaucheClick(ShGUIControlButton * pButton);
+	static bool ButtonOptionsDroiteClick(ShGUIControlButton * pButton);
 
 private:
+	CShIdentifier	m_GameLevel;
 
 	ShEntity2 *		m_pbackground1;
 	ShEntity2 *		m_pbackground2;
@@ -60,7 +70,7 @@ private:
 
 	int				m_iPointsGauche;
 	int				m_iPointsDroit;
-	int				m_iMaxPoints;
+	int				m_iMaxPoint;
 
 	ShTextZone *	m_pInfosGauche;
 	ShTextZone *	m_pInfosDroite;

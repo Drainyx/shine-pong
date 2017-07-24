@@ -4,10 +4,10 @@
     </extensions>
     <project_settings>
         <general>
-            <setting name="generalname" value="test"/>
+            <setting name="generalname" value="Pong"/>
             <setting name="generalgeneric" value="Generic"/>
             <setting name="generaltmp" value="Cooking"/>
-            <setting name="generalicon" value=""/>
+            <setting name="generalicon" value="icon.png"/>
             <setting name="generalsplashscreen" value=""/>
             <setting name="savedata_icon" value=""/>
             <setting name="background_img" value=""/>
