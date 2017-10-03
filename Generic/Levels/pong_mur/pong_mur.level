@@ -15,36 +15,52 @@
             <sprite_texture name="pong.barre2.tga"/>
             <sprite_texture name="pong.bord.tga"/>
             <sprite_texture name="pong.bordv.tga"/>
-            <sprite_texture name="pong.fond.tga"/>
-            <sprite_texture name="pong.menu_1.tga"/>
-            <sprite_texture name="pong.menu_2.tga"/>
+            <sprite_texture name="pong.fondbord.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
         <mesh_list/>
         <prefab_list>
-            <prefab_resource name="background"/>
             <prefab_resource name="collision_gagne_droit"/>
             <prefab_resource name="collision_gagne_gauche"/>
-            <prefab_resource name="fond"/>
+            <prefab_resource name="murbas"/>
             <prefab_resource name="murhaut"/>
             <prefab_resource name="raquettedroit"/>
             <prefab_resource name="raquettegauche"/>
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-1192.161255" min_y="0.000000" max_x="3913.000000" max_y="2500.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-0.028320" min_y="0.000000" max_x="2870.000000" max_y="1600.000000"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
         <entity2 name="balle" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="pong" sprite_name="balle" blend_function="alpha">
             <data_set_list>
                 <data_set name="pong_balle" instance_name="pong_balle_0">
-                    <data type="float" name="velocity_ball" value="500.000000"/>
+                    <data type="float" name="velocity_ball" value="700.000000"/>
                 </data_set>
             </data_set_list>
         </entity2>
-        <entity2 name="plateau" position_x="0.000000" position_y="0.000000" position_z="-0.100000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="28.500006" scale_y="15.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="0.756863" color_g="0.784314" color_b="0.780392" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="pong" sprite_name="fond" blend_function="alpha"/>
+        <entity2 name="plateau" position_x="0.000000" position_y="0.000000" position_z="-0.100000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="2.870000" scale_y="3.800000" scale_z="1.000000" layer="layer_default" show="true" color_r="0.584314" color_g="0.576471" color_b="0.556863" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="pong" sprite_name="fondbord" blend_function="alpha"/>
+        <prefab name="prefab_raquettedroit_001" position_x="1300.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="raquettedroit" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_raquettedroit" instance_name="pong_raquettedroit_0">
+                    <data type="float" name="velocity_racquet" value="1000.000000"/>
+                    <data type="float" name="acceleration_ball" value="30.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="raquettedroit" color_r="0.333333" color_b="0.000000" prefab_child_resource_identifier="raquettedroit"/>
+            <collision_shape name="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit">
+                <collision_shape_point name="collisionraquettedroit.0" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.0"/>
+                <collision_shape_point name="collisionraquettedroit.1" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.1"/>
+                <collision_shape_point name="collisionraquettedroit.2" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.2"/>
+                <collision_shape_point name="collisionraquettedroit.3" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.3"/>
+                <collision_shape_point name="collisionraquettedroit.4" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.4"/>
+                <collision_shape_point name="collisionraquettedroit.5" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.5"/>
+                <collision_shape_point name="collisionraquettedroit.6" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.6"/>
+                <collision_shape_point name="collisionraquettedroit.7" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.7"/>
+            </collision_shape>
+        </prefab>
         <prefab name="prefab_raquettegauche_001" position_x="-1300.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="raquettegauche" layer="layer_default">
             <data_set_list>
                 <data_set name="pong_raquettegauche" instance_name="pong_raquettegauche_0">
@@ -64,80 +80,340 @@
                 <collision_shape_point name="collisionraquettegauche.7" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.7"/>
             </collision_shape>
         </prefab>
-        <prefab name="prefab_raquettedroit_001" position_x="1300.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="raquettedroit" layer="layer_default">
-            <data_set_list>
-                <data_set name="pong_raquettedroit" instance_name="pong_raquettedroit_0">
-                    <data type="float" name="velocity_racquet" value="1000.000000"/>
-                    <data type="float" name="acceleration_ball" value="30.000000"/>
-                </data_set>
-            </data_set_list>
-            <entity2 name="raquettedroit" color_r="0.274510" color_b="0.054902" prefab_child_resource_identifier="raquettedroit"/>
-            <collision_shape name="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit">
-                <collision_shape_point name="collisionraquettedroit.0" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.0"/>
-                <collision_shape_point name="collisionraquettedroit.1" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.1"/>
-                <collision_shape_point name="collisionraquettedroit.2" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.2"/>
-                <collision_shape_point name="collisionraquettedroit.3" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.3"/>
-                <collision_shape_point name="collisionraquettedroit.4" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.4"/>
-                <collision_shape_point name="collisionraquettedroit.5" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.5"/>
-                <collision_shape_point name="collisionraquettedroit.6" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.6"/>
-                <collision_shape_point name="collisionraquettedroit.7" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.7"/>
-            </collision_shape>
-        </prefab>
-        <prefab name="prefab_collision_gagne_droit_001" position_x="-1455.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="0.955000" scale_z="1.000000" prefab_resource_identifier="collision_gagne_droit" layer="layer_default">
+        <prefab name="prefab_collision_gagne_droit_001" position_x="-1455.000000" position_y="1.634118" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="0.950000" scale_z="1.000000" prefab_resource_identifier="collision_gagne_droit" layer="layer_default">
             <data_set_list>
                 <data_set name="pong_gagnedroit" instance_name="pong_gagnedroit_0"/>
             </data_set_list>
-            <entity2 name="gagne_droit" prefab_child_resource_identifier="gagne_droit"/>
+            <entity2 name="gagne_droit" position_x="0.000000" scale_z="0.000000" prefab_child_resource_identifier="gagne_droit"/>
             <collision_segment name="segment_gagne_droit" prefab_child_resource_identifier="segment_gagne_droit">
                 <collision_segment_point name="segment_gagne_droit.p1" parent_point="segment_gagne_droit" prefab_child_resource_identifier="segment_gagne_droit.p1"/>
                 <collision_segment_point name="segment_gagne_droit.p2" parent_point="segment_gagne_droit" prefab_child_resource_identifier="segment_gagne_droit.p2"/>
             </collision_segment>
         </prefab>
-        <prefab name="prefab_collision_gagne_gauche_001" position_x="1455.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="0.955000" scale_z="1.000000" prefab_resource_identifier="collision_gagne_gauche" layer="layer_default">
+        <prefab name="prefab_collision_gagne_gauche_001" position_x="1455.000000" position_y="0.545410" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="0.950000" scale_z="1.000000" prefab_resource_identifier="collision_gagne_gauche" layer="layer_default">
             <data_set_list>
                 <data_set name="pong_gagnegauche" instance_name="pong_gagnegauche_0"/>
             </data_set_list>
-            <entity2 name="gagne_gauche" prefab_child_resource_identifier="gagne_gauche"/>
+            <entity2 name="gagne_gauche" position_x="0.000000" prefab_child_resource_identifier="gagne_gauche"/>
             <collision_segment name="segment_gagne_gauche" prefab_child_resource_identifier="segment_gagne_gauche">
                 <collision_segment_point name="segment_gagne_gauche.p1" parent_point="segment_gagne_gauche" prefab_child_resource_identifier="segment_gagne_gauche.p1"/>
                 <collision_segment_point name="segment_gagne_gauche.p2" parent_point="segment_gagne_gauche" prefab_child_resource_identifier="segment_gagne_gauche.p2"/>
             </collision_segment>
         </prefab>
-        <prefab name="prefab_fond_001" position_x="-100.000000" position_y="0.000000" position_z="-10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="fond" layer="layer_default">
-            <entity2 name="fond1" prefab_child_resource_identifier="fond1"/>
-            <entity2 name="fond2" prefab_child_resource_identifier="fond2"/>
-        </prefab>
-        <prefab name="prefab_background_001" position_x="-100.000000" position_y="0.000000" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="background" layer="layer_default">
-            <entity2 name="background1" show="false" prefab_child_resource_identifier="background1"/>
-            <entity2 name="background2" show="false" prefab_child_resource_identifier="background2"/>
-        </prefab>
-        <prefab name="prefab_murhaut_001" position_x="-1110.000000" position_y="600.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.450000" scale_x="0.500000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+        <prefab name="prefab_murbas_001" position_x="-1148.119995" position_y="-756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.380000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
             <data_set_list>
-                <data_set name="pong_murh" instance_name="pong_murh_0">
-                    <data type="float" name="acceleration_ball" value="7.000000"/>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
                 </data_set>
             </data_set_list>
-            <entity2 name="bordhaut" prefab_child_resource_identifier="bordhaut"/>
+            <entity2 name="bordbas" position_x="-0.028320" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas.p1" parent_point="collisionbas" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas.p2" parent_point="collisionbas" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_002" position_x="-866.813782" position_y="-605.134705" position_z="0.000000" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="1.570800" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_001" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_001" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_001.p1" parent_point="collisionbas_001" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_001.p2" parent_point="collisionbas_001" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_003" position_x="-821.017700" position_y="-451.397308" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.067000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_002" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_002" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_002.p1" parent_point="collisionbas_002" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_002.p2" parent_point="collisionbas_002" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_004" position_x="-771.954773" position_y="-605.133179" position_z="0.000007" rotation_x="0.000001" rotation_y="0.000000" rotation_z="-1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_003" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_003" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_003.p1" parent_point="collisionbas_003" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_003.p2" parent_point="collisionbas_003" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_005" position_x="-523.366028" position_y="-756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.320000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_004" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_004" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_004.p1" parent_point="collisionbas_004" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_004.p2" parent_point="collisionbas_004" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_006" position_x="-291.118500" position_y="-601.860168" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_005" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_005" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_005.p1" parent_point="collisionbas_005" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_005.p2" parent_point="collisionbas_005" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_007" position_x="-245.324615" position_y="-454.668152" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.067000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_006" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_006" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_006.p1" parent_point="collisionbas_006" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_006.p2" parent_point="collisionbas_006" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_008" position_x="-196.259567" position_y="-605.141296" position_z="0.000000" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="-1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_007" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_007" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_007.p1" parent_point="collisionbas_007" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_007.p2" parent_point="collisionbas_007" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_009" position_x="189.718002" position_y="-756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.500000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_008" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_008" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_008.p1" parent_point="collisionbas_008" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_008.p2" parent_point="collisionbas_008" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_010" position_x="569.152893" position_y="-598.592102" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_009" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_009" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_009.p1" parent_point="collisionbas_009" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_009.p2" parent_point="collisionbas_009" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_011" position_x="618.217834" position_y="-444.855316" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.067000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_010" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_010" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_010.p1" parent_point="collisionbas_010" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_010.p2" parent_point="collisionbas_010" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_012" position_x="667.283081" position_y="-598.591980" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_011" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_011" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_011.p1" parent_point="collisionbas_011" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_011.p2" parent_point="collisionbas_011" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murbas_013" position_x="1053.258667" position_y="-756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.500000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murbas" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murb" instance_name="pong_murb_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordbas_012" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordbas"/>
+            <collision_segment name="collisionbas_012" prefab_child_resource_identifier="collisionbas">
+                <collision_segment_point name="collisionbas_012.p1" parent_point="collisionbas_012" prefab_child_resource_identifier="collisionbas.p1"/>
+                <collision_segment_point name="collisionbas_012.p2" parent_point="collisionbas_012" prefab_child_resource_identifier="collisionbas.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_001" position_x="-1004.195374" position_y="756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.570000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
             <collision_segment name="collisionhaut" prefab_child_resource_identifier="collisionhaut">
                 <collision_segment_point name="collisionhaut.p1" parent_point="collisionhaut" prefab_child_resource_identifier="collisionhaut.p1"/>
                 <collision_segment_point name="collisionhaut.p2" parent_point="collisionhaut" prefab_child_resource_identifier="collisionhaut.p2"/>
             </collision_segment>
         </prefab>
-        <prefab name="prefab_murhaut_002" position_x="1106.074585" position_y="602.369141" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-0.450000" scale_x="0.500000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+        <prefab name="prefab_murhaut_002" position_x="-572.424072" position_y="605.133972" position_z="0.000000" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="-1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
             <data_set_list>
                 <data_set name="pong_murh" instance_name="pong_murh_0">
-                    <data type="float" name="acceleration_ball" value="7.000000"/>
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
                 </data_set>
             </data_set_list>
-            <entity2 name="bordhaut_001" prefab_child_resource_identifier="bordhaut"/>
+            <entity2 name="bordhaut_001" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
             <collision_segment name="collisionhaut_001" prefab_child_resource_identifier="collisionhaut">
                 <collision_segment_point name="collisionhaut_001.p1" parent_point="collisionhaut_001" prefab_child_resource_identifier="collisionhaut.p1"/>
                 <collision_segment_point name="collisionhaut_001.p2" parent_point="collisionhaut_001" prefab_child_resource_identifier="collisionhaut.p2"/>
             </collision_segment>
         </prefab>
+        <prefab name="prefab_murhaut_003" position_x="-526.630249" position_y="454.668304" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.067000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_002" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_002" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_002.p1" parent_point="collisionhaut_002" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_002.p2" parent_point="collisionhaut_002" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_004" position_x="-477.565186" position_y="605.432129" position_z="-0.000006" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_003" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_003" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_003.p1" parent_point="collisionhaut_003" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_003.p2" parent_point="collisionhaut_003" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_005" position_x="-98.131851" position_y="756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.500000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_004" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_004" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_004.p1" parent_point="collisionhaut_004" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_004.p2" parent_point="collisionhaut_004" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_006" position_x="287.847412" position_y="605.134094" position_z="0.000244" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_005" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_005" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_005.p1" parent_point="collisionhaut_005" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_005.p2" parent_point="collisionhaut_005" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_007" position_x="333.641632" position_y="451.397400" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.067000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_006" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_006" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_006.p1" parent_point="collisionhaut_006" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_006.p2" parent_point="collisionhaut_006" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_008" position_x="382.706329" position_y="605.134033" position_z="-0.000244" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="1.570796" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_007" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_007" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_007.p1" parent_point="collisionhaut_007" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_007.p2" parent_point="collisionhaut_007" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_009" position_x="621.489014" position_y="756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.320000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_008" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_008" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_008.p1" parent_point="collisionhaut_008" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_008.p2" parent_point="collisionhaut_008" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_010" position_x="866.813721" position_y="605.134033" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-1.570800" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_009" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_009" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_009.p1" parent_point="collisionhaut_009" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_009.p2" parent_point="collisionhaut_009" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_011" position_x="909.335999" position_y="451.397278" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.056000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_010" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_010" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_010.p1" parent_point="collisionhaut_010" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_010.p2" parent_point="collisionhaut_010" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_012" position_x="948.588623" position_y="605.134460" position_z="0.000000" rotation_x="-0.000000" rotation_y="0.000000" rotation_z="1.570800" scale_x="0.205000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_011" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_011" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_011.p1" parent_point="collisionhaut_011" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_011.p2" parent_point="collisionhaut_011" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
+        <prefab name="prefab_murhaut_013" position_x="1190.649536" position_y="756.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.320000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="murhaut" layer="layer_default">
+            <data_set_list>
+                <data_set name="pong_murh" instance_name="pong_murh_0">
+                    <data type="float" name="acceleration_ball" value="5.000000"/>
+                </data_set>
+            </data_set_list>
+            <entity2 name="bordhaut_012" color_r="0.231373" color_g="0.713726" color_b="0.713726" prefab_child_resource_identifier="bordhaut"/>
+            <collision_segment name="collisionhaut_012" prefab_child_resource_identifier="collisionhaut">
+                <collision_segment_point name="collisionhaut_012.p1" parent_point="collisionhaut_012" prefab_child_resource_identifier="collisionhaut.p1"/>
+                <collision_segment_point name="collisionhaut_012.p2" parent_point="collisionhaut_012" prefab_child_resource_identifier="collisionhaut.p2"/>
+            </collision_segment>
+        </prefab>
     </object_list>
     <plugins>
-        <plugin name="pong_obstacles"/>
         <plugin name="pong"/>
     </plugins>
     <data_set>
@@ -155,6 +431,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="false"/>
-        <camera position_x="0.000000" position_y="-0.001630" position_z="5192.836426" target_x="0.000000" target_y="0.000000" target_z="0.000000" znear="1.000000" zfar="40000.000000" zoom="5.192837" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-5192.836426" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="0.000000" position_y="-0.001027" position_z="3270.994873" target_x="0.000000" target_y="0.000000" target_z="0.000000" znear="1.000000" zfar="40000.000000" zoom="3.270995" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-3270.994873" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>

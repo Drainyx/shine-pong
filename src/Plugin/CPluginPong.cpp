@@ -711,7 +711,7 @@ void CPluginPong::DefaultData()
 {
 	m_fVitesseDefautRaquetteGauche = 1000.0f;
 	m_fVitesseDefautRaquetteDroit = 1000.0f;
-	m_fVitesseBalle = 500.0f;
+	m_fVitesseBalle = 700.0f;
 
 	m_bdeplacementDroitOk = true;
 	m_bdeplacementGaucheOk = true;

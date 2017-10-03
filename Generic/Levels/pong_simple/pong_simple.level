@@ -16,8 +16,6 @@
             <sprite_texture name="pong.bord.tga"/>
             <sprite_texture name="pong.bordv.tga"/>
             <sprite_texture name="pong.fond.tga"/>
-            <sprite_texture name="pong.menu_1.tga"/>
-            <sprite_texture name="pong.menu_2.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
@@ -25,7 +23,6 @@
         <prefab_list>
             <prefab_resource name="collision_gagne_droit"/>
             <prefab_resource name="collision_gagne_gauche"/>
-            <prefab_resource name="fond"/>
             <prefab_resource name="murbas"/>
             <prefab_resource name="murhaut"/>
             <prefab_resource name="raquettedroit"/>
@@ -33,7 +30,7 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-1192.161255" min_y="0.000000" max_x="3913.000000" max_y="2500.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="2907.000000" max_y="1600.000000"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
@@ -82,6 +79,10 @@
                 <collision_shape_point name="collisionraquettedroit.1" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.1"/>
                 <collision_shape_point name="collisionraquettedroit.2" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.2"/>
                 <collision_shape_point name="collisionraquettedroit.3" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.3"/>
+                <collision_shape_point name="collisionraquettedroit.4" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.4"/>
+                <collision_shape_point name="collisionraquettedroit.5" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.5"/>
+                <collision_shape_point name="collisionraquettedroit.6" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.6"/>
+                <collision_shape_point name="collisionraquettedroit.7" parent_point="collisionraquettedroit" prefab_child_resource_identifier="collisionraquettedroit.7"/>
             </collision_shape>
         </prefab>
         <prefab name="prefab_raquettegauche_001" position_x="-1300.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="raquettegauche" layer="layer_default">
@@ -97,6 +98,10 @@
                 <collision_shape_point name="collisionraquettegauche.1" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.1"/>
                 <collision_shape_point name="collisionraquettegauche.2" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.2"/>
                 <collision_shape_point name="collisionraquettegauche.3" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.3"/>
+                <collision_shape_point name="collisionraquettegauche.4" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.4"/>
+                <collision_shape_point name="collisionraquettegauche.5" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.5"/>
+                <collision_shape_point name="collisionraquettegauche.6" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.6"/>
+                <collision_shape_point name="collisionraquettegauche.7" parent_point="collisionraquettegauche" prefab_child_resource_identifier="collisionraquettegauche.7"/>
             </collision_shape>
         </prefab>
         <prefab name="prefab_collision_gagne_droit_001" position_x="-1455.000000" position_y="2.963000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="0.955000" scale_z="1.000000" prefab_resource_identifier="collision_gagne_droit" layer="layer_default">
@@ -119,14 +124,6 @@
                 <collision_segment_point name="segment_gagne_gauche.p2" parent_point="segment_gagne_gauche" prefab_child_resource_identifier="segment_gagne_gauche.p2"/>
             </collision_segment>
         </prefab>
-        <prefab name="prefab_fond_001" position_x="-100.000000" position_y="0.000000" position_z="-10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="fond" layer="layer_default">
-            <entity2 name="fond1" prefab_child_resource_identifier="fond1"/>
-            <entity2 name="fond2" prefab_child_resource_identifier="fond2"/>
-        </prefab>
-        <prefab name="prefab_fond_002" position_x="-100.000000" position_y="0.000000" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="fond" layer="layer_default">
-            <entity2 name="fondfin1" show="false" prefab_child_resource_identifier="fond1"/>
-            <entity2 name="fondfin2" show="false" prefab_child_resource_identifier="fond2"/>
-        </prefab>
     </object_list>
     <plugins>
         <plugin name="pong"/>
@@ -144,7 +141,7 @@
         <translate_x enabled="true"/>
         <translate_y enabled="true"/>
         <translate_z enabled="true"/>
-        <grid enabled="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
+        <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="false"/>
         <camera position_x="0.000000" position_y="-0.001988" position_z="6332.257813" target_x="0.000000" target_y="0.000000" target_z="0.000000" znear="1.000000" zfar="40000.000000" zoom="6.332258" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-6332.257813" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>

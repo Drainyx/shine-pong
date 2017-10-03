@@ -55,6 +55,8 @@ public:
 	static bool ButtonRetourClick(ShGUIControlButton * pButton);
 	static bool ButtonOptionsGaucheClick(ShGUIControlButton * pButton);
 	static bool ButtonOptionsDroiteClick(ShGUIControlButton * pButton);
+	static bool ButtonRejouerClick(ShGUIControlButton * pButton);
+	static bool CheckBoxNiveauObstaclesChecked(ShGUIControlCheckBox * pCheckBox);
 
 private:
 	CShIdentifier	m_GameLevel;
@@ -83,6 +85,7 @@ private:
 	ShTextZone *	m_pScoreUnion;
 	ShTextZone *	m_pScoreDroite;
 
+	ShGUIControlPanel * m_pPanelBackground;
 	ShGUIControlPanel * m_pPanelMenu;
 	ShGUIControlPanel * m_pPanelFin;
 	ShGUIControlPanel * m_pPanelNiveau;
